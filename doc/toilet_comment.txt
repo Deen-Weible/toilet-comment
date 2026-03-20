@@ -1,0 +1,29 @@
+*toilet_comment.txt*  ASCII Art Comments with Toilet
+
+==============================================================================
+CONTENTS                                                  *toilet_comment*
+
+  1. Setup                              |toilet_comment-setup|
+  2. Commands                           |toilet_comment-commands|
+  3. Configuration                      |toilet_comment-config|
+
+==============================================================================
+SETUP                                   *toilet_comment-setup*
+
+Call setup() in your init.lua:
+>
+  require("toilet_comment").setup({
+    font = "standard",
+    add_space_below = true,
+  })
+<
+
+==============================================================================
+COMMANDS                                *toilet_comment-commands*
+
+:ToiletComment          Convert visual selection to ASCII comment
+:ToiletCommentFont      Convert with specific font
+:ToiletCommentInteractive  Interactive font picker
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:

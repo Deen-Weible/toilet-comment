@@ -2,6 +2,8 @@
 
 Convert text to ASCII art comments using [toilet](http://toilet.sourceforge.net/) in Neovim.
 
+![screenshot](./screenshot.png)
+
 ## Requirements
 
 - Neovim >= 0.7.0
@@ -29,10 +31,10 @@ sudo dnf install toilet
 
 ```lua
 {
-  "yourusername/toilet-comment.nvim",
+  "Deen-Weible/toilet-comment.nvim",
   config = function()
     require("toilet_comment").setup({
-      font = "standard",
+      font = "standard", // change to a font that exists on your system!
       add_space_below = true,
     })
   end,
@@ -47,7 +49,7 @@ sudo dnf install toilet
 
 ```lua
 use {
-  "yourusername/toilet-comment.nvim",
+  "Deen-Weible/toilet-comment.nvim",
   config = function()
     require("toilet_comment").setup()
   end,
@@ -72,27 +74,28 @@ cp -r toilet-comment.nvim/doc/* ~/.config/nvim/doc/
 1. Select text in visual mode
 2. Run one of the following commands:
 
-| Command | Description |
-|---------|-------------|
-| `:ToiletComment` | Convert selection to ASCII art comment with default font |
+| Command                     | Description                                                   |
+| --------------------------- | ------------------------------------------------------------- |
+| `:ToiletComment`            | Convert selection to ASCII art comment with default font      |
 | `:ToiletCommentFont <font>` | Convert with a specific font (e.g., `:ToiletCommentFont big`) |
-| `:ToiletCommentInteractive` | Open interactive font picker |
+| `:ToiletCommentInteractive` | Open interactive font picker                                  |
 
 ### Example
 
 Select this text:
+
 ```
-Hello World
+comment!
 ```
 
 Run `:ToiletComment` and get:
+
 ```
---  _   _                      _   _             
--- | | | | __ _ _ __ _ __ __ _| |_(_) ___  _ __  
--- | |_| |/ _` | '__| '__/ _` | __| |/ _ \| '_ \ 
--- |  _  | (_| | |  | | | (_| | |_| | (_) | | | |
--- |_| |_|\__,_|_|  |_|  \__,_|\__|_|\___/|_| |_|
--- 
+--                             _   _
+--  __ ___ _ __  _ __  ___ _ _| |_| |
+-- / _/ _ \ '  \| '  \/ -_) ' \  _|_|
+-- \__\___/_|_|_|_|_|_\___|_||_\__(_)
+--
 ```
 
 ## Configuration
@@ -109,20 +112,21 @@ require("toilet_comment").setup({
 
 ### Default Comment Prefixes by Filetype
 
-| Filetype | Prefix |
-|----------|--------|
-| Lua | `-- ` |
-| Python, Ruby, Bash | `# ` |
-| JavaScript, TypeScript, C, C++, Rust, Go | `// ` |
-| Vim | `" ` |
-| HTML | `<!-- ` |
-| CSS | `/* ` |
+| Filetype                                 | Prefix  |
+| ---------------------------------------- | ------- |
+| Lua                                      | `-- `   |
+| Python, Ruby, Bash                       | `# `    |
+| JavaScript, TypeScript, C, C++, Rust, Go | `// `   |
+| Vim                                      | `" `    |
+| HTML                                     | `<!-- ` |
+| CSS                                      | `/* `   |
 
 ## Available Fonts
 
 Common fonts include: `standard`, `big`, `block`, `banner`, `digital`, `future`, `gothic`, `script`
 
 To see all available fonts on your system, run:
+
 ```bash
 toilet -I
 ```
